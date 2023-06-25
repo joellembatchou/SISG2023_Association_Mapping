@@ -1,0 +1,46 @@
+name: SISG2023_Association_Mapping
+output_dir: ../docs
+exclude: ["../data/*","../code/*","../lectures/*"]
+navbar:
+  title: SISG 2023 Module 15
+  left:
+  - text: Home
+    href: index.html
+  - text: Sessions
+    href: about.html
+    menu:
+    - text: Day 1
+    - text: Session 1
+      href: Session01_practical.html
+    - text: Session 2
+      href: Session02_practical.html
+    - text: Session 3
+      href: Session03_practical.html
+    - text: Session 4
+      href: SISGM15_prac4.html
+    - text: '---------'
+    - text: Day 2
+    - text: Session 5
+      href: SISGM15_prac5.html
+    - text: Session 6
+      href: SISGM15_prac6.html
+    - text: Session 7
+      href: Session07_practical.html
+    - text: Session 8
+      href: Session08_practical.html
+    - text: '---------'
+    - text: Day 3
+    - text: Session 9
+      href: SISGM15_prac9.html
+  - text: License
+    href: license.html
+  right:
+  - icon: fab fa-github
+    text: Source code
+    href: https://github.com/joellembatchou/SISG2023_Association_Mapping
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_float: yes
+    theme: readable
+    highlight: textmate

@@ -1,0 +1,127 @@
+---
+title: "Session 01 - Exercises"
+author: ""
+date: ""
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+Before you begin:
+
+* Make sure that R is installed on your computer
+* For this lab, we will use a few R libraries:
+```{r load-libs, eval=FALSE}
+require(data.table)
+require(dplyr)
+require(tidyr)
+require(ggplot2)
+```
+
+The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/code).
+
+*Note: if on the online server, set your working directory to your home directory using in R*
+```{r, eval = FALSE} 
+setwd("home/<username>/")
+```
+
+The data files are in the folder `/data/SISG2022M15/data/`.
+
+## Case-Control Association Testing
+
+
+### Introduction
+We will be using the [LHON dataset](https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/LHON.txt) covered in the lecture notes for this portion of the exercises.
+The LHON dataset is from a case-control study and includes both phenotype and genotype data for a candidate gene.
+
+Let's first load the LHON data file into the R session. You can read the file directly from the web (if you are connected to the web) using the following command:
+```{r load-lhon-data, eval=FALSE}
+LHON.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/LHON.txt", header=TRUE)
+```
+
+Alternatively, you can save the file to your computer and read it into R from the directory where the file is located:
+```{r load-lhon-data-direct, eval=FALSE}
+LHON.df <- fread("LHON.txt", header=TRUE)
+```
+
+### Helpful suggestions for R
+
+There are many ways to obtain summary information for a dataset. Here are some short examples:
+
+* Get information on number of rows/columns as well as variable types
+```{r, eval = FALSE}
+df %>% str
+```
+* Get counts for a specific variable in the table
+```{r, eval = FALSE}
+df %>% count(Variable1)
+# cross tabulation for two variables
+df %>% group_by(Variable1) %>% count(Variable2)
+```
+Alternatively you could have run
+```{r, eval = FALSE}
+df %>% select(Variable1) %>% table
+# cross tabulation for two variables
+df %>% select(Variable1, Variable2) %>% table
+```
+* Functions like `as.numeric()` and `factor()` will be useful to convert between numeric and categorical variables.
+* For any R function you don't know the input syntax, you can get that information using `?<function_name>` 
+
+
+### Exercises
+Here are some things to look at:
+
+1. Examine the variables in the dataset:
+  * How many observations? 
+  * How many cases/controls?
+  * What is the distribution of the genotypes across cases/controls?
+  * What about for allele types?
+
+2. Perform a logistic regression analysis for this data with `CC` as the reference genotype using the `glm()` function. 
+(Hint: make sure to convert the phenotype to a binary 0/1 variable and specify `family = binomial(link = "logit")` in the `glm` call)
+
+3. Obtain odds ratios and confidence intervals for the `CT` and `TT` genotypes relative to the `CC` reference genotype. Interpret.
+
+4. Is there evidence of differences in odds of being a case for the `CT` and `TT` genotypes (compared to `CC`)?
+
+*Extra*: 5. Perform the logistic regression analysis with the additive genotype coding. Obtain odds ratios and confidence intervals. Is there evidence of an association? How does it compare with the 2-parameter model?
+  
+## Association Testing with Quantitative Traits
+
+### Introduction
+We will be using the [Blood Pressure dataset](https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/bpdata.csv) for this portion of the exercises.
+This dataset contains diastolic and systolic blood pressure measurements for 1000 individuals, and genotype data at 11 SNPs in a candidate gene for blood pressure. Covariates such as gender (sex) and body mass index (bmi) are included as well.
+
+Let's first load the file into R. You can read the file directly from the web (if you are connected to the web) using the following command:
+```{r load-bp-data, eval=FALSE}
+BP.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/bpdata.csv", header=TRUE)
+```
+
+Alternatively, you can save the file to your computer and read it into R from the directory where the file is located:
+```{r load-bp-data-direct, eval=FALSE}
+BP.df <- fread("bpdata.csv", header=TRUE)
+```
+
+### Exercises
+Here are some things to try:
+
+1. Perform a linear regression of systolic blood pressure (`sbp`) on `SNP3` using the `lm()` function. 
+Compare the estimates, confidence intervals and p-values you get using:
+* additive (linear) model 
+* dominant model 
+* recessive model
+* 2 parameter model
+
+(Hint: for each case, first add a new column to the data frame, containing the 'predictor' variable you need. Then do the regression using `lm()`)
+
+2. Provide a plot illustrating the relationship between sbp and the three genotypes at SNP3.
+
+For question 3 and 4 below, R also has a 'formula' syntax, frequently used when specifying regression models with many predictors. To regress an outcome `y` on several covariates, the syntax is:
+
+```{r lm-ex, eval=FALSE}
+outcome ~ covariate1 + covariate2 + covariate3
+```
+
+3. Now redo the linear regression analysis of `sbp` from question 1 for the additive model, but this time adjust for `sex` and `bmi`. Do the results change?
+
+4. What proportion of the heritability of `sbp` is explained by all 11 SNPs combined? (contrast categorical coding vs additive coding for the genotypes)
+ 
