@@ -1,6 +1,9 @@
 name: SISG2023_Association_Mapping
 output_dir: ../docs
-exclude: ["../data/*","../code/*","../lectures/*"]
+exclude:
+- ../data/*
+- ../code/*
+- ../lectures/*
 navbar:
   title: SISG 2023 Module 15
   left:
