@@ -11,12 +11,12 @@ Before you begin:
 * Make sure that R is installed on your computer
 * For this lab, we will use the following R libraries:
 ```{r load-libs, eval=FALSE}
-require(data.table)
-require(dplyr)
-require(tidyr)
-require(GWASTools)
-require(ggplot2)
-require(patchwork)
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(GWASTools)
+library(ggplot2)
+library(patchwork)
 ```
 
 The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/code).
