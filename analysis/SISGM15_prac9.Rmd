@@ -1,7 +1,7 @@
 ---
 title: 'Practical 9: Within-family GWAS'
 author: "Summer Institute of Statical Genetics (Module  15)"
-date: '2022-07-27'
+date: '2023-07-27'
 output:
   html_document: default
   pdf_document: default
@@ -107,7 +107,7 @@ The `CHISQ` function has 5 input parameters: `N` (sample size), `M` (number of S
 Let's run a first sample with `N=10000` individuals, `g=2` subgroups in the sample, `M=1000` SNPs, `Fst=.025` and stratification explaining `vs=.05` of the phenotypic variance.
 
 ```{R, eval=FALSE}
-set.seed(27072022)
+set.seed(27072023)
 system.time( testResults <- CHISQ(N=10000,M=1000,Fst=.025,vs=.05,g=2) )
 testResults
 ```  

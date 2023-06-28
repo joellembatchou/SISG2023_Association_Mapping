@@ -18,14 +18,14 @@ require(GWASTools)
 require(ggplot2)
 ```
 
-The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/code).
+The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/code).
 
 *Note: if on the online server, set your working directory to your home directory using in R*
 ```{r, eval = FALSE} 
 setwd("home/<username>/")
 ```
 
-The data files are in the folder `/data/SISG2022M15/data/`.
+The data files are in the folder `/data/SISG2023M15/data/`.
 
 
 ## GWAS in Samples with Structure & Using REGENIE
@@ -34,7 +34,7 @@ The data files are in the folder `/data/SISG2022M15/data/`.
 We will be analyzing a simulated data set which contains sample structure to better understand the impact it can have in GWAS analyses if not accounted for. 
 We will perform GWAS on a quantitative phenotype which was simulated to have high heritability and be highly polygenic.
 
-The file ["sim_rels_pheno.txt"](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/data)” contains the phenotype measurements 
+The file ["sim_rels_pheno.txt"](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/data)” contains the phenotype measurements 
 for a set of individuals and the file "sim_rels_geno.bed" is a binary file in PLINK BED format 
 with accompanying BIM and FAM files which contains the genotype data **at null variants** (i.e. simulated as not associated with the phenotype).  
 *How should we expect the QQ/Manhatthan plots to look like under this scenario?*
@@ -59,7 +59,7 @@ Only perform association test on SNPs that pass the following quality control th
 
 The basic command would look like
 ```{r, eval = FALSE}
-system("/data/SISG2022M15/exe/plink2 --bfile /data/SISG2022M15/data/sim_rels_geno --pheno /data/SISG2022M15/data/sim_rels_pheno.txt --pheno-name <pheno_name> --maf <min_MAF> --geno <max_miss> --hwe <hwe_p_thresh> --glm allow-no-covars --out <output_prefix>")
+system("/data/SISG2023M15/exe/plink2 --bfile /data/SISG2023M15/data/sim_rels_geno --pheno /data/SISG2023M15/data/sim_rels_pheno.txt --pheno-name <pheno_name> --maf <min_MAF> --geno <max_miss> --hwe <hwe_p_thresh> --glm allow-no-covars --out <output_prefix>")
 ```
 
 4. Make a Manhattan plot of the association results using the `manhattanPlot()` R function. The basic command would look like
@@ -94,12 +94,12 @@ using a whole genome regression model.
   
   * Run REGENIE Step 1 to fit the null model and obtain polygenic predictions using a leave-one-chromosome-out (LOCO) scheme. The basic command would look like
 ```{r, eval = FALSE}
-system("/data/SISG2022M15/exe/regenie --bed /data/SISG2022M15/data/sim_rels_geno --phenoFile /data/SISG2022M15/data/sim_rels_pheno.txt --step 1 --loocv --bsize 1000 --qt --extract <plink_QC_pass_snplist> --out <output_prefix_step1>")
+system("/data/SISG2023M15/exe/regenie --bed /data/SISG2023M15/data/sim_rels_geno --phenoFile /data/SISG2023M15/data/sim_rels_pheno.txt --step 1 --loocv --bsize 1000 --qt --extract <plink_QC_pass_snplist> --out <output_prefix_step1>")
 ```
 
   * Run REGENIE Step 2 to perform association testing **at the same set of SNPs tested in PLINK**. The basic command would look like
 ```{r, eval = FALSE}
-system("/data/SISG2022M15/exe/regenie --bed /data/SISG2022M15/data/sim_rels_geno --phenoFile /data/SISG2022M15/data/sim_rels_pheno.txt --step 2 --bsize 400 --qt  --pred <output_prefix_step1>_pred.list --extract <plink_GWAS_snplist> --out <output_prefix_step2>")
+system("/data/SISG2023M15/exe/regenie --bed /data/SISG2023M15/data/sim_rels_geno --phenoFile /data/SISG2023M15/data/sim_rels_pheno.txt --step 2 --bsize 400 --qt  --pred <output_prefix_step1>_pred.list --extract <plink_GWAS_snplist> --out <output_prefix_step2>")
 ```  
 
   * Generate Manhatthan and Q-Q plots based on the association results and compute $\lambda_{GC}$. Compare with output from Questions 4-6.

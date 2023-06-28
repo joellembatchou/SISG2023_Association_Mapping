@@ -1,7 +1,7 @@
 ---
 title: 'Practical 6: Prediction using GWAS summary statistics'
 author: "Summer Institute of Statical Genetics (Module  15)"
-date: '2022-07-26'
+date: '2023-07-26'
 output:
   html_document: default
   pdf_document: default
@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<span style="color:red;">**This practical runs on the SISG2022 server.**</span>
+<span style="color:red;">**This practical runs on the SISG2023 server.**</span>
 
 
 ## Preparation
@@ -57,27 +57,27 @@ Copy the data needed for the practical.
 
 1) Copy the genotype files (data from 1000 Genomes Project; 1KG)
 ```{bash, eval=FALSE}
-cp /data/SISG2022M15/data/1kg_hm3.* .
+cp /data/SISG2023M15/data/1kg_hm3.* .
 ```
 
 2) Copy GWAS summary statistics generated using `fastGWA`
 ```{bash, eval=FALSE}
-cp /data/SISG2022M15/data/*.fastGWA .
+cp /data/SISG2023M15/data/*.fastGWA .
 ```
 
 3) Copy phenotype data for the validation sample used to assess prediction accuracy
 ```{bash, eval=FALSE}
-cp /data/SISG2022M15/data/*.phen .
+cp /data/SISG2023M15/data/*.phen .
 ```
 
 4) Copy ancestry information for the validation sample
 ```{bash, eval=FALSE}
-cp /data/SISG2022M15/data/1kg-sample-2504-phased.txt .
+cp /data/SISG2023M15/data/1kg-sample-2504-phased.txt .
 ```
 
 5) Copy list of 1KG samples with European ancestries
 ```{bash, eval=FALSE}
-cp /data/SISG2022M15/data/EUR.id .
+cp /data/SISG2023M15/data/EUR.id .
 ```
 
 
@@ -97,7 +97,7 @@ r2_thresh=0.1  # LD threshold for clumping
 trait=Trait1
 pv_thresh=5e-8
 
-PLINK=/data/SISG2022M15/exe/plink
+PLINK=/data/SISG2023M15/exe/plink
 ${PLINK} --bfile 1kg_hm3 \
       --keep EUR.id \
       --clump ${trait}.fastGWA \
@@ -240,7 +240,7 @@ You will see below an R script to run SBLUP. This code is provided in an externa
 
 ```{bash, eval=FALSE}
 ## Calculate PGS for each predictor
-Rscript /data/SISG2022M15/data/sblup.R Trait1
+Rscript /data/SISG2023M15/data/sblup.R Trait1
 ```
 
 The command above will generate a file named `SBLUP/Trait1.sblupInR.res`.
@@ -286,14 +286,14 @@ for(ancestry in ancestries){
 It is also possible to run SBLUP using `GCTA`. This will require a different formatting of GWAS summary statistics, which we provide (files named `Trait1.ma` and `Trait2.ma`). Note that the same format can also be used with `GCTB` to run SBayesC (see **Part 3** below). The implementation of SBLUP in `GCTA` requires genotype data as input (and not a pre-calculated LD correlation matrix) as well as shrinkage parameter $\lambda = M_{SNPs}\left(\frac{1}{h^2_{SNP}}-1\right)$. An example command is given below
 
 ```{bash, eval=FALSE}
-GCTA=/data/SISG2022M15/exe/gcta64_v1.94
+GCTA=/data/SISG2023M15/exe/gcta64_v1.94
 lambda=135628
 for trait in Trait1 Trait2
   do
   ${GCTA} \
   --bfile 1kg_hm3 \
   --chr 20 \
-  --cojo-file /data/SISG2022M15/data/${trait}.ma \
+  --cojo-file /data/SISG2023M15/data/${trait}.ma \
   --cojo-sblup ${lambda} \
   --cojo-wind 1000 \
   --thread-num 20 \
@@ -321,17 +321,17 @@ ${GCTB} --bfile sampleForLD --make-full-ldm --snp 1-5000 --out SBC/BLOCK1618.CHR
 
 Set the path to GCTB
 ```{bash, eval=FALSE}
-GCTB=/data/SISG2022M15/exe/gctb
+GCTB=/data/SISG2023M15/exe/gctb
 ```
 
 Now, to run SBayes C, you could run the following command.
 
 ```{bash, eval=FALSE}
-mldm=/data/SISG2022M15/data/mldm.txt
+mldm=/data/SISG2023M15/data/mldm.txt
 trait=Trait1
 
 ${GCTB} --sbayes C --mldm ${mldm} \
---gwas-summary /data/SISG2022M15/data/${trait}.ma \
+--gwas-summary /data/SISG2023M15/data/${trait}.ma \
 --pi 0.0001 --hsq 0.001 \
 --chain-length 10000 \
 --burn-in 5000 \

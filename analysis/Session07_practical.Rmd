@@ -20,21 +20,21 @@ require(ACAT)
 require(ggplot2)
 ```
 
-The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/code).
+The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/code).
 
 *Note: if on the online server, set your working directory to your home directory using in R*
 ```{r, eval = FALSE} 
 setwd("home/<username>/")
 ```
 
-The data files are in the folder `/data/SISG2022M15/data/`.
+The data files are in the folder `/data/SISG2023M15/data/`.
 
 ## Rare Variant Analysis
 
 ### Introduction
 We will look into a dataset collected on a quantitative phenotype which was first analyzed through GWAS and a signal was detected in chromosome 1. Let's determine whether the signal is present when we focus on rare variation at the locus. In our analyses, *we will define rare variants as those with* $MAF \leq 5\%$.
 
-The file ["rv_pheno.txt"](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/data)” contains the phenotype measurements for a set of individuals and the file "rv_geno_chr1.bed" is a binary file in PLINK BED format with accompanying BIM and FAM files which contains the genotype data.
+The file ["rv_pheno.txt"](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/data)” contains the phenotype measurements for a set of individuals and the file "rv_geno_chr1.bed" is a binary file in PLINK BED format with accompanying BIM and FAM files which contains the genotype data.
 
 ### Exercises
 Here are some things to try:
@@ -42,7 +42,7 @@ Here are some things to try:
 1.  Using PLINK, extract **rare variants** in a new PLINK BED file.
 (Hint: use options `--max-maf` to select rare variants and `--maj-ref force` so that the minor allele is the effect allele)
 ```{r, eval = FALSE}
-system("/data/SISG2022M15/exe/plink2 --bfile /data/SISG2022M15/data/rv_geno_chr1 --max-maf <..> --maj-ref force --make-bed --out <output_prefix>")
+system("/data/SISG2023M15/exe/plink2 --bfile /data/SISG2023M15/data/rv_geno_chr1 --max-maf <..> --maj-ref force --make-bed --out <output_prefix>")
 ```
   
 
@@ -65,7 +65,7 @@ G <- BEDMatrix("<bed_file_prefix>", simple_names = TRUE)
 
 Reminder: The PLINK2 command would look like
 ```{r, eval = FALSE}
-system("/data/SISG2022M15/exe/plink2 --bfile <BED_file_with_extracted_SNPs> --pheno /data/SISG2022M15/data/rv_pheno.txt --pheno-name <pheno_name> --glm allow-no-covars --out <output_prefix>")
+system("/data/SISG2023M15/exe/plink2 --bfile <BED_file_with_extracted_SNPs> --pheno /data/SISG2023M15/data/rv_pheno.txt --pheno-name <pheno_name> --glm allow-no-covars --out <output_prefix>")
 ```
 
 5. We will first compare three collapsing/burden approaches:

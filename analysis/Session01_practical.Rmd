@@ -17,25 +17,25 @@ require(tidyr)
 require(ggplot2)
 ```
 
-The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/code).
+The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/code).
 
 *Note: if on the online server, set your working directory to your home directory using in R*
 ```{r, eval = FALSE} 
 setwd("home/<username>/")
 ```
 
-The data files are in the folder `/data/SISG2022M15/data/`.
+The data files are in the folder `/data/SISG2023M15/data/`.
 
 ## Case-Control Association Testing
 
 
 ### Introduction
-We will be using the [LHON dataset](https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/LHON.txt) covered in the lecture notes for this portion of the exercises.
+We will be using the [LHON dataset](https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/LHON.txt) covered in the lecture notes for this portion of the exercises.
 The LHON dataset is from a case-control study and includes both phenotype and genotype data for a candidate gene.
 
 Let's first load the LHON data file into the R session. You can read the file directly from the web (if you are connected to the web) using the following command:
 ```{r load-lhon-data, eval=FALSE}
-LHON.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/LHON.txt", header=TRUE)
+LHON.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/LHON.txt", header=TRUE)
 ```
 
 Alternatively, you can save the file to your computer and read it into R from the directory where the file is located:
@@ -88,12 +88,12 @@ Here are some things to look at:
 ## Association Testing with Quantitative Traits
 
 ### Introduction
-We will be using the [Blood Pressure dataset](https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/bpdata.csv) for this portion of the exercises.
+We will be using the [Blood Pressure dataset](https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/bpdata.csv) for this portion of the exercises.
 This dataset contains diastolic and systolic blood pressure measurements for 1000 individuals, and genotype data at 11 SNPs in a candidate gene for blood pressure. Covariates such as gender (sex) and body mass index (bmi) are included as well.
 
 Let's first load the file into R. You can read the file directly from the web (if you are connected to the web) using the following command:
 ```{r load-bp-data, eval=FALSE}
-BP.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/bpdata.csv", header=TRUE)
+BP.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/bpdata.csv", header=TRUE)
 ```
 
 Alternatively, you can save the file to your computer and read it into R from the directory where the file is located:

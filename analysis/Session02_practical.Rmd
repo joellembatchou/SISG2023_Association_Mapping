@@ -18,21 +18,21 @@ require(bigsnpr)
 require(ggplot2)
 ```
 
-The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/code).
+The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/code).
 
 *Note: if on the online server, set your working directory to your home directory using in R*
 ```{r, eval = FALSE} 
 setwd("home/<username>/")
 ```
 
-The data files are in the folder `/data/SISG2022M15/data/`.
+The data files are in the folder `/data/SISG2023M15/data/`.
 
 ## Population Structure Inference
 
 ### Introduction
 We will be working with a subset of the genotype data from the Human Genome Diversity Panel (HGDP) and HapMap.
 
-The file “[YRI_CEU_ASW_MEX_NAM.bed](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/data)” is a binary file in PLINK BED format with accompanying BIM and FAM files.
+The file “[YRI_CEU_ASW_MEX_NAM.bed](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/data)” is a binary file in PLINK BED format with accompanying BIM and FAM files.
 It contains genotype data at autosomal SNPs for:
 
 * Native American samples from HGDP
@@ -43,7 +43,7 @@ Northern and Western Europe (CEU)
   + Mexican Americans in Los Angeles, California (MXL)
   + African Americans from the south-western United States (ASW)
 
-**File with ancestry labels assignment for each sample**: [Population_Sample_Info.txt](https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/Population_Sample_Info.txt) 
+**File with ancestry labels assignment for each sample**: [Population_Sample_Info.txt](https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/Population_Sample_Info.txt) 
 
 ### Exercises
 Here are some things to look at:

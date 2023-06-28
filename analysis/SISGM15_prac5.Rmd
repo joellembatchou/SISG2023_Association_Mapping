@@ -1,7 +1,7 @@
 ---
 title: 'Practical 5: Conditional and Joint Analysis (COJO)'
 author: "Summer Institute of Statical Genetics (Module  15)"
-date: '2022-07-26'
+date: '2023-07-26'
 output:
   html_document: default
   pdf_document: default
@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<span style="color:red;">**This practical runs on the SISG2022 server.**</span>
+<span style="color:red;">**This practical runs on the SISG2023 server.**</span>
 
 
 This practical aims at
@@ -37,7 +37,7 @@ The code below generates the LD correlation structure between SNPs in each block
 **Run the following commands**
 
 ```{R, eval=FALSE}
-set.seed(28072022)
+set.seed(28072023)
 nblocks <- 20
 rhos    <- sqrt(seq(0.1,0.9,len=nblocks))
 m       <- 100 # number of SNPs per LD block
@@ -152,7 +152,7 @@ write(causals,paste0(datPath,"/causals.snplist")) ## list of causal SNPs
 
 ```{R, eval=FALSE}
 ## Set path for PLINK
-plink   <- "/data/SISG2022M15/exe/plink"
+plink   <- "/data/SISG2023M15/exe/plink"
 
 ## Simulate and write LD ref
 simLDref <- function(Nldref){
@@ -199,13 +199,13 @@ ls -lt ldRef.*
 You can now run COJO. Either from the terminal
 
 ```{bash, eval=FALSE}
-GCTA=/data/SISG2022M15/exe/gcta64_v1.94
+GCTA=/data/SISG2023M15/exe/gcta64_v1.94
 ${GCTA} --bfile ldRef --cojo-file GWAS.ma --chr 10 --cojo-slct --cojo-p 2.5e-5 --out test1
 ```
 
 or from `R` (calling terminal using the `system()` command)
 ```{R, eval=FALSE}
-gcta <- "/data/SISG2022M15/exe/gcta64_v1.94"
+gcta <- "/data/SISG2023M15/exe/gcta64_v1.94"
 
 system(paste0(gcta," --bfile ldRef ",
               "--cojo-file GWAS.ma --chr 10 ",

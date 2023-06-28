@@ -19,14 +19,14 @@ require(ggplot2)
 require(patchwork)
 ```
 
-The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2022_Association_Mapping/tree/master/code).
+The R template to do the exercises is [here](https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/master/code).
 
 *Note: if on the online server, set your working directory to your home directory using in R*
 ```{r, eval = FALSE} 
 setwd("home/<username>/")
 ```
 
-The data files are in the folder `/data/SISG2022M15/data/`.
+The data files are in the folder `/data/SISG2023M15/data/`.
 
 ## Case-control imbalance in GWAS
 
@@ -41,7 +41,7 @@ N <- 10e3
 write(paste0("5000 common 0.05 0.5 1 1"), "sim.config")
 write(paste0("5000 rare 0.001 0.01 1 1"), "sim.config", append = TRUE)
 # Run PLINK1.9
-system(paste0("/data/SISG2022M15/exe/plink --make-bed --simulate sim.config --simulate-ncases ", N, " --simulate-ncontrols 0 --simulate-prevalence 0.1  --out cc_imb_geno"))
+system(paste0("/data/SISG2023M15/exe/plink --make-bed --simulate sim.config --simulate-ncases ", N, " --simulate-ncontrols 0 --simulate-prevalence 0.1  --out cc_imb_geno"))
 ```
 You should now have files `cc_imb_geno.{bed,bim,fam}`.
 
@@ -69,7 +69,7 @@ We will assess the null distribution of our test statistics when performing asso
 
 1.  Run GWAS in REGENIE (step 2) analyzing all 3 traits. The basic command would be
 ```{r, eval = FALSE}
-system("/data/SISG2022M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt  --ignore-pred --out <output_prefix>")
+system("/data/SISG2023M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt  --ignore-pred --out <output_prefix>")
 ```
 This will produce three files (one for each phenotype): `<output_prefix>_Y1.regenie`, `<output_prefix>_Y2.regenie`, `<output_prefix>_Y3.regenie` 
 
@@ -114,5 +114,5 @@ plot.sumstats.hist(sumstats.y1.common, title = "Y1 - Common SNPs") | plot.sumsta
 
 *Extra: 5. Re-run GWAS in Questions 1 but now applying Firth correction. Make a QQ plot of the -log10 p-values for Y3. The REGENIE command with Firth would be*
 ```{r}
-system("/data/SISG2022M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt  --ignore-pred --firth --out --out <output_prefix>")
+system("/data/SISG2023M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt  --ignore-pred --firth --out --out <output_prefix>")
 ```
