@@ -8,7 +8,7 @@ require(patchwork)
 ## Set to your home directory if on server
 setwd("~/")
 
-## Data sets are in : /data/SISG2022M15/data/
+## Data sets are in : /data/SISG2023M15/data/
 
 ####################################
 ## Case-control imbalance in GWAS ##
@@ -20,7 +20,7 @@ N <- 10e3
 write(paste0("5000 common 0.05 0.5 1 1"), "sim.config")
 write(paste0("5000 rare 0.001 0.01 1 1"), "sim.config", append = TRUE)
 # Run PLINK1.9
-system(paste0("/data/SISG2022M15/exe/plink1.9 --make-bed --simulate sim.config --simulate-ncases ", N, " --simulate-ncontrols 0 --simulate-prevalence 0.1  --out cc_imb_geno"))
+system(paste0("/data/SISG2023M15/exe/plink1.9 --make-bed --simulate sim.config --simulate-ncases ", N, " --simulate-ncontrols 0 --simulate-prevalence 0.1  --out cc_imb_geno"))
 
 #### Data simulation - phenotypes
 # get FID/IID from FAM file
@@ -38,7 +38,7 @@ data.frame(FID = sample.ids$V1, IID = sample.ids$V2, Y1 = y1, Y2 = y2, Y3 = y3) 
 
 
 # Question 1. Run GWAS in REGENIE (step 2 only) analyzing all 3 traits.
-system("/data/SISG2022M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt --ignore-pred --out <output_prefix>")
+system("/data/SISG2023M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt --ignore-pred --out <output_prefix>")
 
 
 # Question 2. Read in the three summary statistics files in R and make a QQ plot of the p-values for each phenotype. Since these are null SNPs, how does it compare to what we expect?

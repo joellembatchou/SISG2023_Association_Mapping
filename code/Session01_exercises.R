@@ -7,7 +7,7 @@ require(ggplot2)
 ## Case-Control Association Testing ##
 ######################################
 # Read in the data
-LHON.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/LHON.txt", header=TRUE)
+LHON.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/LHON.txt", header=TRUE)
 
 # Question 1. Examine the variables in the dataset:
 ## How many observations? 
@@ -33,7 +33,7 @@ LHON.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Asso
 ## Association Testing with Quantitative Traits ##
 ##################################################
 # Read in the data
-BP.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2022_Association_Mapping/master/data/bpdata.csv", header=TRUE)
+BP.df <- fread("https://raw.githubusercontent.com/joellembatchou/SISG2023_Association_Mapping/master/data/bpdata.csv", header=TRUE)
 
 # Question 1. Perform a linear regression of systolic blood pressure (`sbp`) on `SNP3` using the `lm()` function.
 ## Additive (linear) model 
