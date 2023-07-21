@@ -89,10 +89,10 @@ data.frame(
     "Power, Sample Size & Design Considerations"
     ),
   Lecture = c(
-    paste0(print.link("Intro", "https://www.dropbox.com/s/y9pnbp2ogiuhmn1/SISG2022session00.pdf?dl=0"), ", ", print.link("Lecture", "https://www.dropbox.com/s/mewb9fc40o539a2/SISG2022session01.pdf?dl=0")),
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/9d1qm2v1ww9umy6/SISG2022session02.pdf?dl=0")),
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/nlovi0ktxwcldtp/SISG2022session03.pdf?dl=0")),
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/g3r8gf96dx9o7o1/L4_Power-Design_M15.pdf?dl=0"))
+    paste0(print.link("Intro", "https://www.dropbox.com/scl/fi/jhphkal6ei3vviqs6mdpd/SISG2023session00.pdf?rlkey=9zwr53aq01zppi5ehvt89bbyo&dl=0"), ", ", print.link("Lecture", "https://www.dropbox.com/scl/fi/z0ffm3s34dvqfg0h934kn/SISG2023session01.pdf?rlkey=q83u1u6wxc42lbuy5m2ww2ge8&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/h4yh6mha6mfys59myvw0w/SISG2023session02.pdf?rlkey=p1fecx9td64n84onk2jo1y7t2&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/gt5yjftxc6qn6wqvn4x7r/SISG2023session03.pdf?rlkey=fqgwjmreo7bnpbaqgyv6ucbw5&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/mwhdnlx95hhsc037j3izc/L4_Power-Design_M15.pdf?rlkey=htf2hyd65e8hhnmcirntz07i4&dl=0"))
       ),
   "Exercises" = c(
     paste0(print.link("Exercises", "Session01_practical.html")),
@@ -113,7 +113,6 @@ knitr::kable("html", escape = FALSE,
 ) %>%
 kableExtra::kable_styling(bootstrap_options = c("hover", "condensed","striped"))
 ```
-Link to Day 1 video: `r #print.link("Zoom recording", "https://cloudstor.aarnet.edu.au/plus/s/xWl39cHTNZyMliE")`
 
 ```{r tue-sched, echo = FALSE, results = "asis"}
 data.frame(
@@ -125,10 +124,10 @@ data.frame(
     "Emerging issues showcasing ongoing research"
     ),
   Lecture = c(
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/ocn6w6nau9lhuu6/L5_Downstream-Analyses_M15.pdf?dl=0")),
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/6kzse5qe0ffokjm/L6_Polygenic_Scores_Lectures_M15.pdf?dl=0")),
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/bowur0rymsha5tq/SISG2022session07.pdf?dl=0")),
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/cxjwaft49uk2jv0/SISG2022session08.pdf?dl=0"))
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/e3idft2ibdhewpeo887ru/L5_Downstream-Analyses_M15.pdf?rlkey=b9295tc25icy0xzcjtx3abaag&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/1uh8ee1rj02vtuqqyh24i/L6_Polygenic_Scores_Lectures_M15.pdf?rlkey=pcej9onlpg2rwn7g1kzx5ukt6&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/b8d1jxaz1lti0jc2ykcyi/SISG2023session07.pdf?rlkey=bz8x7cffh5gkdtfnr88y2yl18&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/rx1ibf1gp7f7i0jgf5as8/SISG2023session08.pdf?rlkey=xbl1oblyndjtist0cytm500hc&dl=0"))
       ),
   "Exercises" = c(
     paste0(print.link("Exercises", "SISGM15_prac5.html")),
@@ -149,7 +148,6 @@ knitr::kable("html", escape = FALSE,
 ) %>%
 kableExtra::kable_styling(bootstrap_options = c("hover", "condensed","striped"))
 ```
-Link to Day 2 video: `r #print.link("Zoom recording", "https://cloudstor.aarnet.edu.au/plus/s/9qPj8ZlGCTh8nTt")`
 
 ```{r wed-sched, echo = FALSE, results = "asis"}
 data.frame(
@@ -159,7 +157,7 @@ data.frame(
     "Emerging issues showcasing ongoing research"
     ),
   Lecture = c(
-    paste0(print.link("Lecture", "https://www.dropbox.com/s/ovjlge16wvyqyet/L9_Beyond_Standard_GWAS_M15.pdf?dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/pra6xf0r7vwgsb435povy/L9_Beyond_Standard_GWAS_M15.pdf?rlkey=ewnfj5kl9jpcjsvxpyfsf3b9y&dl=0")),
     "Lecture" 
       ),
   "Exercises" = c(
@@ -177,7 +175,6 @@ knitr::kable("html", escape = FALSE,
 ) %>%
 kableExtra::kable_styling(bootstrap_options = c("hover", "condensed","striped"))
 ```
-Link to Day 3 video: `r #print.link("Zoom recording", "https://cloudstor.aarnet.edu.au/plus/s/edR12nsfDxD9IiV")`
 
 
 ## Datasets
@@ -193,3 +190,4 @@ These have all been loaded on the online server for the class.
   * [Introduction to R materials](https://faculty.washington.edu/kenrice/rintro/) from SISG Module 3
   * [Graphics with ggplot2](https://ggplot2.tidyverse.org/)
   * [Data manipulation with dplyr](http://dplyr.tidyverse.org/)
+
