@@ -23,7 +23,7 @@ The R template to do the exercises is [here](https://github.com/joellembatchou/S
 
 *Note: if on the online server, set your working directory to your home directory using in R*
 ```{r, eval = FALSE} 
-setwd("home/<username>/")
+setwd("~/")
 ```
 
 The data files are in the folder `/data/SISG2023M15/data/`.
