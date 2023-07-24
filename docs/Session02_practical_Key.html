@@ -405,7 +405,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -416,8 +416,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -426,13 +426,13 @@ aria-hidden="true"></span> </a>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2023-07-23
+<strong>Last updated:</strong> 2023-07-24
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -456,21 +456,18 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R
-Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
@@ -561,15 +558,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjoellembatchouSISG2023AssociationMappingtree9514a0a26f8627b8fc40500222029dab7015b4d1targetblank9514a0aa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjoellembatchouSISG2023AssociationMappingtreed47504f0ee3c5122f1dcb1a85acc7627337e0bb4targetblankd47504fa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/9514a0a26f8627b8fc40500222029dab7015b4d1" target="_blank">9514a0a</a>
+<a href="https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/d47504f0ee3c5122f1dcb1a85acc7627337e0bb4" target="_blank">d47504f</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomjoellembatchouSISG2023AssociationMappingtree9514a0a26f8627b8fc40500222029dab7015b4d1targetblank9514a0aa"
+id="strongRepositoryversionstrongahrefhttpsgithubcomjoellembatchouSISG2023AssociationMappingtreed47504f0ee3c5122f1dcb1a85acc7627337e0bb4targetblankd47504fa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -579,7 +576,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/9514a0a26f8627b8fc40500222029dab7015b4d1" target="_blank">9514a0a</a>.
+<a href="https://github.com/joellembatchou/SISG2023_Association_Mapping/tree/d47504f0ee3c5122f1dcb1a85acc7627337e0bb4" target="_blank">d47504f</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -593,17 +590,11 @@ depends on. Below is the status of the Git repository when the results
 were generated:
 </p>
 <pre><code>
-Ignored files:
-    Ignored:    data/sim_rels_geno.bed
-
 Untracked files:
-    Untracked:  analysis/SISGM15_prac4Solution.Rmd
     Untracked:  analysis/SISGM15_prac5Solution.Rmd
     Untracked:  analysis/SISGM15_prac6Solution.Rmd
     Untracked:  analysis/SISGM15_prac9Solution.Rmd
     Untracked:  analysis/Session01_practical_Key.Rmd
-    Untracked:  analysis/Session02_practical_Key.Rmd
-    Untracked:  analysis/Session03_practical_Key.Rmd
     Untracked:  analysis/Session07_practical_Key.Rmd
     Untracked:  analysis/Session08_practical_Key.Rmd
 
@@ -620,10 +611,92 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with
-<code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were
+made to the R Markdown
+(<code>analysis/Session02_practical_Key.Rmd</code>) and HTML
+(<code>docs/Session02_practical_Key.html</code>) files. If you’ve
+configured a remote Git repository (see <code>?wflow_git_remote</code>),
+click on the hyperlinks in the table below to view the files as they
+were in that past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/joellembatchou/SISG2023_Association_Mapping/blob/d47504f0ee3c5122f1dcb1a85acc7627337e0bb4/analysis/Session02_practical_Key.Rmd" target="_blank">d47504f</a>
+</td>
+<td>
+Joelle Mbatchou
+</td>
+<td>
+2023-07-24
+</td>
+<td>
+add session 2 key
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/joellembatchou/SISG2023_Association_Mapping/532fb30f374110800155d6a2b1b92da5932cfacb/docs/Session02_practical_Key.html" target="_blank">532fb30</a>
+</td>
+<td>
+Joelle Mbatchou
+</td>
+<td>
+2023-07-24
+</td>
+<td>
+update doc
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/joellembatchou/SISG2023_Association_Mapping/dea762943059c255784443dae512e236a41951fb/docs/Session02_practical_Key.html" target="_blank">dea7629</a>
+</td>
+<td>
+Joelle Mbatchou
+</td>
+<td>
+2023-07-24
+</td>
+<td>
+add key to website
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
@@ -927,17 +1000,18 @@ loaded via a namespace (and not attached):
 [21] stringr_1.5.0      git2r_0.32.0       munsell_0.5.0      bigparallelr_0.3.2
 [25] codetools_0.2-19   httpuv_1.6.11      htmltools_0.5.5    sass_0.4.6        
 [29] yaml_2.3.7         hexbin_1.28.3      later_1.3.1        pillar_1.9.0      
-[33] jquerylib_0.1.4    cachem_1.0.8       doRNG_1.8.6        iterators_1.0.14  
-[37] foreach_1.5.2      robustbase_0.99-0  parallelly_1.36.0  RSpectra_0.16-1   
-[41] tidyselect_1.2.0   digest_0.6.33      stringi_1.7.12     purrr_1.0.1       
-[45] labeling_0.4.2     cowplot_1.1.1      rprojroot_2.0.3    fastmap_1.1.1     
-[49] grid_4.3.1         colorspace_2.1-0   cli_3.6.1          magrittr_2.0.3    
-[53] utf8_1.2.3         bigutilsr_0.3.4    withr_2.5.0        scales_1.2.1      
-[57] promises_1.2.0.1   rmarkdown_2.23     bigsparser_0.6.1   rmio_0.4.0        
-[61] bit_4.0.5          bigreadr_0.2.5     workflowr_1.7.0    evaluate_0.21     
-[65] knitr_1.43         ff_4.0.9           doParallel_1.0.17  viridisLite_0.4.2 
-[69] rlang_1.1.1        Rcpp_1.0.11        glue_1.6.2         rstudioapi_0.15.0 
-[73] jsonlite_1.8.7     R6_2.5.1           fs_1.6.2           flock_0.7         </code></pre>
+[33] jquerylib_0.1.4    whisker_0.4.1      cachem_1.0.8       doRNG_1.8.6       
+[37] iterators_1.0.14   foreach_1.5.2      robustbase_0.99-0  RSpectra_0.16-1   
+[41] parallelly_1.36.0  tidyselect_1.2.0   digest_0.6.33      stringi_1.7.12    
+[45] purrr_1.0.1        labeling_0.4.2     cowplot_1.1.1      rprojroot_2.0.3   
+[49] fastmap_1.1.1      grid_4.3.1         colorspace_2.1-0   cli_3.6.1         
+[53] magrittr_2.0.3     utf8_1.2.3         bigutilsr_0.3.4    withr_2.5.0       
+[57] scales_1.2.1       promises_1.2.0.1   rmarkdown_2.23     bigsparser_0.6.1  
+[61] rmio_0.4.0         bit_4.0.5          bigreadr_0.2.5     workflowr_1.7.0   
+[65] evaluate_0.21      ff_4.0.9           knitr_1.43         doParallel_1.0.17 
+[69] viridisLite_0.4.2  rlang_1.1.1        Rcpp_1.0.11        glue_1.6.2        
+[73] rstudioapi_0.15.0  jsonlite_1.8.7     R6_2.5.1           fs_1.6.2          
+[77] flock_0.7         </code></pre>
 </div>
 </div>
 </div>
