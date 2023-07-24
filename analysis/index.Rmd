@@ -104,7 +104,7 @@ data.frame(
 paste0(print.link("HTML", "Session01_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/jjl17tlnxou0c9ljiog87/Session01_practical_Key.Rmd?rlkey=n6mizylh2r27flmtfi741jh7w&dl=0")),
 paste0(print.link("HTML", "Session02_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/qd4p8bdfl7ql3ms37yqxy/Session02_practical_Key.Rmd?rlkey=2vougy9or92xs2uoqids98m8d&dl=0")),
 paste0(print.link("HTML", "Session03_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/zeletj9631cg32cqw5jzn/Session03_practical_Key.Rmd?rlkey=nzqntqila54y7gc8fdz9qss1z&dl=0")),
-" " #		paste0(print.link("HTML", "SISGM15_prac4Solution.html"), ", ", print.link("Rmd", ""))
+paste0(print.link("HTML", "SISGM15_prac4Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/7gwy3rtlam322jvtc7h0a/SISGM15_prac4Solution.Rmd?rlkey=umaly08kh828qderjwzay1452&dl=0"))
   )
  , check.names = FALSE ) %>%
 knitr::kable("html", escape = FALSE, 
@@ -136,10 +136,10 @@ data.frame(
     paste0(print.link("Exercises", "Session08_practical.html"))
   ),
   "Key" = c(
-" ",#    paste0(print.link("HTML", "SISGM15_prac5Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/s/dq1g5ljtauzippi/SISGM15_prac5Solution.Rmd?dl=0")),
-" ",#    paste0(print.link("HTML", "SISGM15_prac6Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/s/9hvla3t6e8hr7yg/SISGM15_prac6Solution.Rmd?dl=0")),
-" ",#    paste0(print.link("HTML", "Session07_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/s/uwwwt9c2oquwrdm/Session07_practical_Key.Rmd?dl=0")),
-" " #    paste0(print.link("HTML", "Session08_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/s/k5gmek552e1rbv6/Session08_practical_Key.Rmd?dl=0"))
+" ",#    paste0(print.link("HTML", "SISGM15_prac5Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/p5rwuiw0g5kqtu07dck5u/SISGM15_prac5Solution.Rmd?rlkey=0mo1txmz3pbrbqbs5nspvjft5&dl=0")),
+" ",#    paste0(print.link("HTML", "SISGM15_prac6Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/wfl6iw3t7m295k34l8pqz/SISGM15_prac6Solution.Rmd?rlkey=dr8w03macltt6x2xvd0yelgo9&dl=0")),
+" ",#    paste0(print.link("HTML", "Session07_practical_Key.html"), ", ", print.link("Rmd", "")),
+" " #    paste0(print.link("HTML", "Session08_practical_Key.html"), ", ", print.link("Rmd", ""))
   )
   , check.names = FALSE) %>%
 knitr::kable("html", escape = FALSE, 
@@ -157,7 +157,7 @@ data.frame(
     "Emerging issues showcasing ongoing research"
     ),
   Lecture = c(
-    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/pra6xf0r7vwgsb435povy/L9_Beyond_Standard_GWAS_M15.pdf?rlkey=ewnfj5kl9jpcjsvxpyfsf3b9y&dl=0")),
+    paste0(print.link("Lecture", "https://www.dropbox.com/scl/fi/3gre44f5kkiu8offry1vp/SISGM15_prac9Solution.Rmd?rlkey=9v7qvshezy2bxf5h952jfm1ab&dl=0")),
     "Lecture" 
       ),
   "Exercises" = c(
@@ -165,7 +165,7 @@ data.frame(
     " "
   ),
   "Key" = c(
-   " ",# paste0(print.link("HTML", "SISGM15_prac9Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/s/4bspvg6eteoir1z/SISGM15_prac9Solution.Rmd?dl=0")),
+   " ",# paste0(print.link("HTML", "SISGM15_prac9Solution.html"), ", ", print.link("Rmd", "")),
     " "
   )
   , check.names = FALSE) %>%
