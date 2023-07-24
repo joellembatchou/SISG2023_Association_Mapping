@@ -102,7 +102,7 @@ data.frame(
   ),
   "Key" = c(
 paste0(print.link("HTML", "Session01_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/jjl17tlnxou0c9ljiog87/Session01_practical_Key.Rmd?rlkey=n6mizylh2r27flmtfi741jh7w&dl=0")),
-" ",#		paste0(print.link("HTML", "Session02_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/qd4p8bdfl7ql3ms37yqxy/Session02_practical_Key.Rmd?rlkey=2vougy9or92xs2uoqids98m8d&dl=0")),
+paste0(print.link("HTML", "Session02_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/qd4p8bdfl7ql3ms37yqxy/Session02_practical_Key.Rmd?rlkey=2vougy9or92xs2uoqids98m8d&dl=0")),
 " ",#		paste0(print.link("HTML", "Session03_practical_Key.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/zeletj9631cg32cqw5jzn/Session03_practical_Key.Rmd?rlkey=nzqntqila54y7gc8fdz9qss1z&dl=0")),
 " " #		paste0(print.link("HTML", "SISGM15_prac4Solution.html"), ", ", print.link("Rmd", ""))
   )
