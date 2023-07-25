@@ -53,10 +53,25 @@ system("/data/SISG2023M15/exe/plink2 --bfile /data/SISG2023M15/data/rv_geno_chr1
 G <- BEDMatrix("<bed_file_prefix>", simple_names = TRUE)
 ```
   * Load the phenotype data from `rv_pheno.txt`
+```{r, eval = FALSE}
+y <- fread("<pheno_file>", header = TRUE)
+```
   * Keep only samples who are present both in the genotype as well as phenotype data and who don't have missing values for the phenotype
-
+```{r, eval = FALSE}
+# identify samples with non-missing phenotypes
+ids.keep <- y %>% drop_na(Pheno) %>% pull(IID)
+# subset the genotype & phenotype data
+G <- G[match(ids.keep, rownames(G)), ]
+y <- y %>% drop_na(Pheno) 
+```
 3. Examine the genotype data:
   * Compute the minor allele frequency (MAF) for each SNP and plot histogram. (hint: use `na.rm=TRUE` when calling `mean()`)
+```{r, eval = FALSE}
+# we can use the 'apply' R function to apply a function to each column/row in a dataframe
+maf <- apply(G, 2, function(x) mean(x, na.rm=TRUE))/2
+# we can use the 'hist' function in R to plot histograms
+hist(maf)
+```
   * Check for missing values (hint: use function `is.na()` which returns TRUE/FALSE value for missing status)
   
 4. Run the single variant association tests in PLINK (only for the extracted variants).
