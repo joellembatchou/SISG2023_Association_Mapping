@@ -28,6 +28,11 @@ iid.geno <- rownames(G) # sample IDs of individuals in the genotype data
 y <- fread("<pheno_file>", header = TRUE)
 
 ## Keep only samples who are present both in the genotype as well as phenotype data and who don't have missing values for the phenotype
+# identify samples with non-missing phenotypes
+ids.keep <- y %>% drop_na(Pheno) %>% pull(IID)
+# subset the genotype & phenotype data
+G <- G[match(ids.keep, rownames(G)), ]
+y <- y %>% drop_na(Pheno)
 
 # Question 3: Examine the genotype data:
 ## Compute the minor allele frequency (MAF) for each SNP and plot histogram. (hint: use `na.rm=TRUE` when calling `mean()`)
