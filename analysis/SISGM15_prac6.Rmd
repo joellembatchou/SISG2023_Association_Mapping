@@ -286,7 +286,7 @@ for(ancestry in ancestries){
 It is also possible to run SBLUP using `GCTA`. This will require a different formatting of GWAS summary statistics, which we provide (files named `Trait1.ma` and `Trait2.ma`). Note that the same format can also be used with `GCTB` to run SBayesC (see **Part 3** below). The implementation of SBLUP in `GCTA` requires genotype data as input (and not a pre-calculated LD correlation matrix) as well as shrinkage parameter $\lambda = M_{SNPs}\left(\frac{1}{h^2_{SNP}}-1\right)$. An example command is given below
 
 ```{bash, eval=FALSE}
-GCTA=/data/SISG2023M15/exe/gcta64_v1.94
+GCTA=/data/SISG2023M15/exe/gcta-1.94.1
 lambda=135628
 for trait in Trait1 Trait2
   do
