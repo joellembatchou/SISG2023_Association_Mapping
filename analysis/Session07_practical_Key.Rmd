@@ -146,7 +146,7 @@ SKAT(G, skat.null, method="optimal.adj")$p.value
 
 9. Run ACATV on the single variant p-values.
 ```{r}
-# `weights` vector is from Qesution 5
+# `weights` vector is from Question 5
 acat.weights <- weights^2 * maf * (1 - maf)
 p.acatv <- ACAT(sv_pvals$P, weights = acat.weights)
 p.acatv
