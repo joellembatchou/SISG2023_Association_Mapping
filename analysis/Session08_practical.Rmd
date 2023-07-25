@@ -114,5 +114,5 @@ plot.sumstats.hist(sumstats.y1.common, title = "Y1 - Common SNPs") | plot.sumsta
 
 *Extra: 5. Re-run GWAS in Questions 1 but now applying Firth correction. Make a QQ plot of the -log10 p-values for Y3. The REGENIE command with Firth would be*
 ```{r}
-system("/data/SISG2023M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt  --ignore-pred --firth --out --out <output_prefix>")
+system("/data/SISG2023M15/exe/regenie --bed cc_imb_geno --phenoFile cc_imb_pheno.txt --step 2 --bsize 400 --bt  --ignore-pred --firth --out <output_prefix>")
 ```
