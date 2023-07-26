@@ -165,7 +165,7 @@ data.frame(
     " "
   ),
   "Key" = c(
-   " ",# paste0(print.link("HTML", "SISGM15_prac9Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/3gre44f5kkiu8offry1vp/SISGM15_prac9Solution.Rmd?rlkey=9v7qvshezy2bxf5h952jfm1ab&dl=0")),
+  paste0(print.link("HTML", "SISGM15_prac9Solution.html"), ", ", print.link("Rmd", "https://www.dropbox.com/scl/fi/3gre44f5kkiu8offry1vp/SISGM15_prac9Solution.Rmd?rlkey=9v7qvshezy2bxf5h952jfm1ab&dl=0")),
     " "
   )
   , check.names = FALSE) %>%
