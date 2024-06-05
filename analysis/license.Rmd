@@ -1,9 +1,0 @@
----
-title: "License"
-output:
-  workflowr::wflow_html:
-    toc: false
----
-
-The material is released under the MIT License.
-
